@@ -1,0 +1,370 @@
+/* ================================================= */
+/* 1. CSS CƠ BẢN VÀ THIẾT LẬP WRAPPER */
+/* ================================================= */
+#dacbiet {
+    font-family: Arial, sans-serif;
+    background-color: #1b2838;
+    color: white;
+}
+
+.carousel_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px auto;
+    max-width: fit-content;
+}
+
+/* ================================================= */
+/* 2. CONTAINER ẢNH VÀ SLIDE TRACK (MẶC ĐỊNH: 3 ẢNH) */
+/* ================================================= */
+
+/* Kích thước tiêu chuẩn (Màn hình lớn: Hiển thị 3 ảnh) */
+.carousel_container {
+    overflow: hidden;
+    position: relative;
+    width: 900px;
+    /* 300px * 3 = 900px */
+    height: 450px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.carousel_items {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    width: fit-content;
+}
+
+/* Kích thước của 1 slide đơn */
+.store_main_capsule {
+    min-width: 300px;
+    height: 450px;
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+    /* Quan trọng cho lớp overlay */
+    padding: 10px 10px;
+}
+
+.store_main_capsule img,
+.capsule.main_capsule img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: #555;
+    border: 1px solid #000000;
+}
+
+/* ================================================= */
+/* 3. HIỂN THỊ THÔNG TIN KHI HOVER (CÓ VIDEO & NỀN XANH) */
+/* ================================================= */
+
+/* Thiết lập khối chứa thông tin (Phủ toàn bộ slide) */
+.info_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgba(30, 47, 60, 0.95);
+    /* Màu nền xanh đậm mờ */
+    color: white;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* KÍCH HOẠT HIỂN THỊ KHI TRỎ CHUỘT */
+.store_main_capsule:hover .info_overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* KHỐI VIDEO */
+.info_overlay .info_video {
+    width: 100%;
+    height: 60%;
+    /* Video chiếm 60% chiều cao */
+    object-fit: cover;
+}
+
+/* KHỐI CHỨA VĂN BẢN (40% chiều cao còn lại) */
+.info_overlay .info_content {
+    height: 40%;
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* Đẩy nội dung văn bản xuống đáy */
+}
+
+/* Tùy chỉnh nội dung văn bản */
+.info_overlay .app_name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.info_overlay .discount_final_price {
+    color: #a0c20a;
+    margin-bottom: 5
+}
+
+/* ================================================= */
+/* 4. TÙY CHỈNH NÚT ĐIỀU HƯỚNG */
+/* ================================================= */
+
+/* Kiểu dáng chung cho nút mũi tên (Đã có, giữ nguyên) */
+.arrow {
+    cursor: pointer;
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    user-select: none;
+    margin: 0 15px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+/* Kiểu dáng riêng cho Mũi tên Phải */
+.arrow.next {
+    /* Mặc dù đã được căn chỉnh trong .carousel_wrapper,
+       bạn có thể dùng các quy tắc này nếu cần dịch chuyển cụ thể hơn */
+    /* Ví dụ: Thêm một chút margin bên phải */
+    margin-right: 20px;
+}
+
+.arrow.next:hover {
+    /* Hiệu ứng hover riêng cho nút phải (Nếu muốn khác .arrow:hover) */
+    background-color: #666;
+}
+
+/* fix */
+.store_main_capsule {
+    padding: 10px;
+}
+
+.capsule.main_capsule {
+    height: 450px;
+}
+
+#dacbiet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1c3545;
+}
+
+/* Container bao bọc tất cả các thẻ game */
+.carousel-viewport {
+    width: 1000px;
+    /* Đặt chiều rộng để chỉ hiển thị khoảng 3-4 thẻ */
+    overflow: hidden;
+    /* Cực kỳ quan trọng: Ẩn những nội dung bị tràn ra ngoài */
+    margin: 0 auto;
+}
+
+/* Danh sách các thẻ game */
+.card-list {
+    display: flex;
+    /* Đưa tất cả các thẻ nằm trên một hàng */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* Cực kỳ quan trọng: Thao tác dịch chuyển sẽ áp dụng vào thuộc tính này */
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Các thẻ game riêng lẻ */
+.card-item {
+    min-width: 333.33px;
+    /* Đảm bảo mỗi thẻ chiếm 1/3 chiều rộng (nếu viewport là 1000px) */
+    box-sizing: border-box;
+    padding: 10px;
+    flex-shrink: 0;
+    /* Ngăn các thẻ bị co lại */
+}
+
+/* Thêm kiểu cho các nút */
+.prev-button,
+.next-button {
+    cursor: pointer;
+    padding: 10px;
+    background: #333;
+    color: white;
+    border: none;
+    position: absolute;
+    /* Hoặc điều chỉnh vị trí phù hợp với thiết kế của bạn */
+}
+
+/* ================================================= */
+/* 1. CSS CƠ BẢN VÀ THIẾT LẬP WRAPPER */
+/* ================================================= */
+#dacbiet {
+    font-family: Arial, sans-serif;
+    background-color: #1b2838;
+    color: white;
+}
+
+.carousel_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px auto;
+    max-width: fit-content;
+}
+
+/* ================================================= */
+/* 2. CONTAINER ẢNH VÀ SLIDE TRACK (MẶC ĐỊNH: 3 ẢNH) */
+/* ================================================= */
+
+/* Kích thước tiêu chuẩn (Màn hình lớn: Hiển thị 3 ảnh) */
+.carousel_container {
+    overflow: hidden;
+    position: relative;
+    width: 900px;
+    /* 300px * 3 = 900px */
+    height: 450px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.carousel_items {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    width: fit-content;
+}
+
+/* Kích thước của 1 slide đơn */
+.store_main_capsule {
+    min-width: 300px;
+    height: 450px;
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+    /* Quan trọng cho lớp overlay */
+    padding: 10px 10px;
+}
+
+.store_main_capsule img,
+.capsule.main_capsule img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: #555;
+    border: 1px solid #000000;
+}
+
+/* ================================================= */
+/* 3. HIỂN THỊ THÔNG TIN KHI HOVER (CÓ VIDEO & NỀN XANH) */
+/* ================================================= */
+
+/* Thiết lập khối chứa thông tin (Phủ toàn bộ slide) */
+.info_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgba(30, 47, 60, 0.95);
+    /* Màu nền xanh đậm mờ */
+    color: white;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* KÍCH HOẠT HIỂN THỊ KHI TRỎ CHUỘT */
+.store_main_capsule:hover .info_overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* KHỐI VIDEO */
+.info_overlay .info_video {
+    width: 100%;
+    height: 60%;
+    /* Video chiếm 60% chiều cao */
+    object-fit: cover;
+}
+
+/* KHỐI CHỨA VĂN BẢN (40% chiều cao còn lại) */
+.info_overlay .info_content {
+    height: 40%;
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* Đẩy nội dung văn bản xuống đáy */
+}
+
+/* Tùy chỉnh nội dung văn bản */
+.info_overlay .app_name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.info_overlay .discount_final_price {
+    color: #a0c20a;
+    margin-bottom: 5
+}
+
+/* ================================================= */
+/* 4. TÙY CHỈNH NÚT ĐIỀU HƯỚNG */
+/* ================================================= */
+
+/* Kiểu dáng chung cho nút mũi tên (Đã có, giữ nguyên) */
+.arrow {
+    cursor: pointer;
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    user-select: none;
+    margin: 0 15px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+/* Kiểu dáng riêng cho Mũi tên Phải */
+.arrow.next {
+    /* Mặc dù đã được căn chỉnh trong .carousel_wrapper,
+       bạn có thể dùng các quy tắc này nếu cần dịch chuyển cụ thể hơn */
+    /* Ví dụ: Thêm một chút margin bên phải */
+    margin-right: 20px;
+}
+
+.arrow.next:hover {
+    /* Hiệu ứng hover riêng cho nút phải (Nếu muốn khác .arrow:hover) */
+    background-color: #666;
+}
+
+/* fix */
+.store_main_capsule {
+    padding: 10px;
+}
+
+.capsule.main_capsule {
+    height: 450px;
+}

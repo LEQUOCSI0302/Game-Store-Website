@@ -1,0 +1,7 @@
+@charset "UTF-8";
+#poster_full{
+		position: absolute;
+	  width: 100%;
+    height: 100%;
+        object-fit: cover;
+}

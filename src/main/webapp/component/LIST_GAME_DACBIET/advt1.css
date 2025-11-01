@@ -1,0 +1,182 @@
+body {
+    background-color: rgb(27, 40, 56);
+    font-family: Arial, sans-serif;
+    /* Thêm font chữ cơ bản cho dễ đọc */
+}
+
+#open {
+    background-color: #2A475E;
+}
+
+.list_noibat {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+    flex-grow: 1;
+}
+
+/* --- THANH ĐIỀU HƯỚNG TAB (NỔI BẬT, ƯU ĐÃI...) --- */
+#tab-navigation {
+    background-color: #1B2838;
+    display: flex;
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#tab-navigation a {
+    display: flex;
+
+    font-size: 15px;
+    text-decoration: none;
+    color: #000;
+    /* --- rgb(5, 15, 40) CÁC THUỘC TÍNH NÀY ĐỂ CĂN GIỮA CHỮ --- */
+    border-radius: 3px;
+    padding: 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- DANH SÁCH GAME (CỘT BÊN TRÁI) --- */
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    padding: 10px;
+}
+
+.list_noidung {
+    display: flex;
+    gap: 10px;
+    box-shadow: 2.5px 5px 7.5px rgba(0, 0, 0, 0.3);
+    background-color: rgb(27, 40, 56);
+    width: 600px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+}
+
+.list_noidung:hover {
+    background-color: #3a5a78;
+    /* Thêm hiệu ứng đổi màu khi hover */
+}
+
+.list_noidung img {
+    width: 175px;
+    height: 98px;
+    /* Giữ tỷ lệ ảnh 16:9 */
+    object-fit: cover;
+}
+
+.list_noidung .list_a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px 10px 5px 0;
+    /* Căn đều padding */
+    color: #e3e3e3;
+}
+
+#moiphathanh {
+    background-color: #2A475E;
+    color: aliceblue;
+    border: none;
+    padding: 5px;
+    font-size: 8px;
+    text-decoration: none;
+    display: block;
+    /* Chuyển thành block để căn giữa dễ hơn */
+    text-align: center;
+    width: 100%;
+}
+
+/* --- KHUNG THÔNG TIN CHI TIẾT (CỘT BÊN PHẢI) --- */
+.list_ABC {
+    position: sticky;
+    /* Giữ cột thông tin đứng yên khi cuộn */
+    top: 20px;
+    background: radial-gradient(69% 62% at 100% 16%, #b4cfe1 0%, #95bbd4 100%);
+    border-radius: 2.5px;
+    width: 250px;
+    height: 450px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.list_ABC .list_ABCD {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7.5px;
+    height: 100%;
+}
+
+.list_ABC .list_ABCD .tab_title {
+    font-family: "Motiva Sans", Sans-serif;
+    text-transform: none;
+    font-size: 12px;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+}
+
+.list_ABC .list_ABCD .text {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.list_ABC .list_ABCD .text p {
+    box-shadow: 2.5px 5px 7.5px rgba(0, 0, 0, 0.3);
+    background-color: rgb(27, 40, 56);
+    padding: 7.5px;
+    width: 90%;
+    text-align: center;
+    border-radius: 2.5px;
+    color: #e3e3e3;
+    font-size: 8px;
+}
+
+#game-tags {
+    display: flex;
+    gap: 5px;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#game-tags li {
+    background: #5094cc;
+    padding: 2.5px 7.5px;
+    border-radius: 7.5px;
+    color: white;
+    font-size: 7px;
+}
+
+#game-preview-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+}
+
+#game-preview-images img {
+    width: 95%;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+/* --- ĐỊNH DẠNG CHO TAB ĐANG ĐƯỢC CHỌN --- */
+#tab-navigation a.active-tab {
+    background-color: #2A475E;
+    color: #ffffff;
+    width: 80px;
+
+}
