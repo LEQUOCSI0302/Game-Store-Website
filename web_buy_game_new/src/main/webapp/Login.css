@@ -1,0 +1,161 @@
+body {
+    background: #32353c;
+
+}
+
+#Login {
+    font-family: "Motiva Sans", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image:
+        linear-gradient(to bottom, #7f8590, #070707dd),
+        url('img/anh_nen.jpg');
+    margin: 0 auto;
+    max-width: 1500px;
+    height: 730px;
+    color: rgb(255, 255, 255);
+}
+
+.form-group {
+    margin-bottom: 10px;
+
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 2px;
+    padding: 0;
+
+    color: rgb(14, 116, 190);
+}
+
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: 400px;
+    padding: 7px;
+    display: block;
+    margin: 0 auto;
+    margin: 0;
+    color: aliceblue;
+    background-color: #32353c;
+    border: none;
+}
+
+.login-form {
+    padding: 20px;
+    max-width: 600px;
+    max-height: 300px;
+    background: #181a21;
+}
+
+.login-button {
+    padding: 10px 70px;
+    margin-top: 10px;
+    display: block;
+    margin: 0 auto;
+    background: linear-gradient(90deg, #06ff9b 0%, #13cfbc 100%);
+    border: none;
+}
+
+/* Kiểu cơ bản cho container chứa các nút mạng xã hội */
+.social-login-options {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Kiểu cơ bản cho các nút đăng nhập mạng xã hội */
+.social-login-button {
+    display: flex;
+    /* Thay đổi thành flex để căn chỉnh icon và chữ */
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
+    justify-content: center;
+    /* Căn giữa toàn bộ nội dung */
+    padding: 10px 70px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Khoảng cách giữa icon và chữ */
+.social-login-button i {
+    margin-right: 10px;
+    font-size: 18px;
+    /* Điều chỉnh kích thước icon */
+}
+
+/* Kiểu riêng cho nút Google (Gmail) */
+.google-button {
+    background-color: #db4437;
+    /* Màu đỏ của Google */
+}
+
+.google-button:hover {
+    background-color: #c2382c;
+}
+
+/* Kiểu riêng cho nút Facebook */
+.facebook-button {
+    background-color: #4267B2;
+    /* Màu xanh của Facebook */
+}
+
+.facebook-button:hover {
+    background-color: #365899;
+}
+
+#account_creation {
+    padding: 20px;
+    display: flex;
+    align-content: end;
+    justify-content: center;
+}
+
+/* 1. Đảm bảo input type="email" cũng có kiểu tương tự input text/password */
+.form-group input[type="email"] {
+    width: 400px;
+    padding: 7px;
+    display: block;
+    margin: 0;
+    color: aliceblue;
+    background-color: #32353c;
+    border: none;
+}
+
+/* 2. Style cho nút quay lại trang đăng nhập */
+.back-to-login {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #999;
+    /* Màu xám nhạt */
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.back-to-login:hover {
+    color: #fff;
+    /* Trắng khi rê chuột */
+    text-decoration: underline;
+}
+
+/* 3. Tùy chọn: Điều chỉnh kích thước của khung login-form nếu cần */
+/* Trang đăng ký thường có nhiều trường hơn trang đăng nhập */
+.login-form {
+    padding: 20px;
+    max-width: 600px;
+    /* Loại bỏ max-height: 300px; để khung tự co giãn */
+    /* max-height: 300px; */
+    background: #181a21;
+}
