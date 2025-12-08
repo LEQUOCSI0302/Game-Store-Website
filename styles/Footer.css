@@ -1,0 +1,55 @@
+
+@charset "UTF-8";
+/* MÀU SẮC DỰA TRÊN STEAM */
+
+/* CONTAINER CHÍNH: <footer> */
+footer {
+    background-color: #0F1026;
+    color: #E8E8E8;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+    padding: 0; /* Xóa padding mặc định */
+}
+
+/* CONTAINER BÊN TRONG: <div> đầu tiên (bọc toàn bộ nội dung) */
+footer > div:first-child {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px; /* Padding chính cho nội dung footer */
+}
+
+/* ĐỊNH DẠNG DÒNG LIÊN KẾT CHÍNH (Chính sách, Pháp lý,...) */
+.footer-links-row {
+    margin-bottom: 20px;
+}
+.footer-links-row a {
+    color: var(--text-color);
+    text-decoration: none;
+    opacity: 0.8;
+}
+.footer-links-row a:hover {
+    color: #F0DFAF;
+    opacity: 1;
+}
+
+/* ĐỊNH DẠNG ĐƯỜNG KẺ NGANG <hr> */
+hr {
+    border: none;
+    border-top: 1px solid var(--border-color); /* Áp dụng màu xám đậm cho đường phân cách */
+    margin: 15px 0;
+    width: 100%;
+}
+
+/* ĐỊNH DẠNG THÔNG TIN ĐỊA CHỈ VÀ ĐIỆN THOẠI */
+.footer-address-info > div {
+    /* Đảm bảo chúng hiển thị trên các dòng riêng biệt nếu cần, hoặc dùng flex để xếp ngang */
+    display: block; 
+}
+
+/* XỬ LÝ KHOẢNG CÁCH CHO CÁC PHẦN TỬ CHIA CỘT */
+.footer-columns {
+    display: flex;
+    gap: 30px;
+    padding-top: 10px;
+}

@@ -1,0 +1,125 @@
+@charset "UTF-8";
+* {
+    box-sizing: border-box; /* Cực kỳ quan trọng */
+}
+.discount-section{
+	position: relative;
+	overflow: hidden;
+	background-color: #1b2838;
+    height: 496.025px;
+    color: #c7d5e0;
+  /* Khoảng cách trên/dưới */
+    margin: 30px auto; 
+    /* Cố định chiều rộng và căn giữa nội dung */
+    width: 1200px; 
+    padding: 30px 20px; /* Lề trong để nội dung không dính vào mép trình duyệt */
+}
+h3{
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 25px; /* Khoảng cách với hàng thẻ bên dưới */
+}
+
+h3 .brown-more{
+	padding: 15px 30px;
+	color: #ffff;
+	
+	margin-left: 20px;
+	border-radius: 5px;
+	border: 1px solid #c7d5e0; 
+	outline: none;
+	transition: 0.2s;
+}
+
+.discount-carousel-container{
+	overflow: hidden; 
+    width: 90%;
+    margin: 0;
+    position: relative;
+}
+.discount-slider{
+	display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 200%; /* Cần đủ rộng để chứa tất cả thẻ */
+    gap: 20px; /* Khoảng cách giữa các thẻ (thay thế margin-right) */
+}
+/* Định nghĩa kích thước thẻ (3 item lớn full màn hình) */
+.discount-card[data-col="3"] {
+   /* flex-basis: tính 100% / 3 (trừ đi gap) */
+    flex-basis: calc(100% / 3 - 13.33px); 
+    width: calc(100% / 3 - 13.33px); /* 20px gap / 3 khoảng trống */
+}
+/* Định nghĩa kích thước thẻ (6 item nhỏ full màn hình) */
+.discount-card[data-col="6"] {
+     /* flex-basis: tính 100% / 6 (trừ đi gap) */
+    flex-basis: calc(100% / 6 - 3.33px); 
+    width: calc(100% / 6 - 3.33px); /* 20px gap / 6 khoảng trống */
+}
+
+.discount-card {
+    position: relative;
+    flex-shrink: 0; /* Ngăn thẻ co lại */
+   overflow: hidden; /* Cần thiết để chứa ảnh */
+    background-color: #1a1a1a;
+    border-radius: 4px;
+}
+.discount-card:last-child {
+    margin-right: 0; /* Xóa margin cho thẻ cuối cùng */
+}
+
+.discount-img { width: 100%; display: block; }
+.discount-overlay {
+	position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(27, 40, 56, 0.8);
+    padding: 15px 20px;
+  display: flex;
+    flex-direction: column;
+}
+.deal-type, .offer-end, .percent-off, .price {
+    margin: 0;
+    padding: 0;
+}
+.live-badge { color: red; font-weight: bold; margin-right: 5px; }
+
+/* Mũi tên Slider */
+.slider-arrow {
+position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+   padding: 10px 15px;
+    border-radius: 4px;
+}
+.left-arrow { left: 0; }
+.right-arrow { right: 0; }
+/* Tooltip */
+.discount-tooltip {
+    position: absolute;
+    background-color: #2a475e;
+    border: 1px solid #1c2e40;
+    padding: 15px;
+    z-index: 20;
+    color: #c7d5e0;
+    width: 350px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: none; /* Ẩn ban đầu */
+    pointer-events: none; /* Ngăn tooltip tự kích hoạt lại onmouseenter */
+}
+.tooltip-tags span {
+    display: inline-block;
+    background-color: #3e6d8a;
+    padding: 3px 6px;
+    margin-right: 5px;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
