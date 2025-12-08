@@ -1,0 +1,322 @@
+@charset "UTF-8";
+
+* {
+	box-sizing: border-box;
+}
+
+header {
+	display: block;
+	width: 100%;
+	background-color: #0F1026;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+/*
+		PHẦN TRÊN CODE CỦA HEADER
+*/
+.container-header-top {
+	display: flex;
+	position: relative;
+	padding: 5px;
+	align-items: center;
+	max-width: 1400px;
+	margin: 0 auto;
+	align-items: center;
+	max-width: 1400px;
+	margin: 0 auto;
+	border-bottom: 0.5px solid #4F4F67;
+}
+
+.container-header-top .item-tool {
+	display: flex;
+	margin-left: auto;
+	padding: 10px;
+	justify-content: center;
+	text-align: center;
+	gap: 8px;
+}
+
+.contact-infor {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.item-language {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.item-tool a, .item-tool span {
+	margin: 0;
+}
+
+.item-tool svg {
+	height: 22px;
+	width: 22px;
+}
+
+.item-tool a {
+	color: #E8E8E8;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #F0DFAF;
+}
+
+span {
+	color: #E8E8E8;
+}
+
+span:hover {
+	color: #F0DFAF;
+}
+/*
+		PHẦN KẾT THÚC CODE PHẦN TRÊN CỦA HEADER
+*/
+
+/*
+		PHẦN DƯỚI CODE CỦA HEADER
+*/
+.container-header-bottom {
+	display: flex;
+	position: relative;
+	padding: 5px;
+	max-width: 1400px;
+	margin: 0 auto;
+	align-items: center;
+	border-bottom: 0.5px solid #4F4F67;
+}
+
+.container-header-bottom .list-store-game {
+	display: flex;
+	padding: 10px;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+}
+
+.list-store {
+	position: relative;
+}
+
+.list {
+	display: flex;
+	list-style-type: none;
+	margin: 0;
+	padding: 10px 0;
+	overflow: hidden;
+}
+
+.dropdown {
+	float: left;
+}
+
+.element-of-list {
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+	padding: 14px 16px;
+	color: #E8E8E8;
+}
+
+.dropdown .element-drop {
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+	color: #E8E8E8;
+}
+
+.element-drop:hover {
+	color: #F0DFAF;
+}
+
+.element-store {
+	position: absolute;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	padding: 12px 16px;
+	z-index: 2;
+	border-radius: 4px;
+	opacity: 0;
+    visibility: hidden; /* Dùng visibility thay vì display để transition hoạt động */
+    transform: translateY(-10px);
+	transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+.dropdown:hover {
+	background-color: rgba(255, 255, 255, 0.07); /* sáng nhẹ */
+	border: 1px solid rgba(212, 180, 106, 0.8); /* viền vàng gold */
+	border-radius: 4px;
+	box-shadow: 0 0 8px rgba(212, 180, 106, 0.3); /* hiệu ứng sáng */
+	cursor: pointer;
+}
+
+.element-store .element-drop {
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+	background-color: #0F1026;
+}
+
+.dropdown:hover .element-store {
+	opacity: 1;
+    visibility: visible;
+	transform: translateY(0);
+}
+
+.element-categories {
+	position: absolute;
+	min-width: 160px;
+	z-index: 2;
+	opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px); 
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+.element-store, .element-categories {
+    /* 1. Nền đậm hơn (từ #0F1026 thành một màu tối hơn) */
+    background-color: #0c0d1e; 
+    
+    /* 2. Đường viền mỏng (sử dụng màu divider hoặc màu highlight) */
+    border: 1px solid #3b3457; 
+    
+    /* 3. Bo góc nhẹ nhàng */
+    border-radius: 6px; 
+    
+    /* 4. Tăng bóng đổ để tạo chiều sâu */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); 
+    
+    /* Đặt z-index cao hơn để luôn hiển thị trên các nội dung khác */
+    z-index: 100; 
+}
+/* Các mục con trong dropdown */
+.element-store .element-drop, 
+.element-categories .element-drop {
+    padding: 10px 16px; /* Điều chỉnh padding cho thoải mái */
+    text-align: left;
+    
+    /* Transition cho màu nền để hover mượt mà */
+    transition: background-color 0.2s ease;
+}
+/* Thêm các thuộc tính transition và opacity vào lớp cha (Dropdown) */
+.element-store, .element-categories {
+    /* ... các thuộc tính khác ... */
+    
+    /* Ẩn ban đầu */
+    opacity: 0;
+    /* Vị trí ban đầu hơi cao hơn */
+    transform: translateY(-10px); 
+    
+    /* Thêm transition cho độ mờ và vị trí */
+    transition: opacity 0.3s ease, transform 0.3s ease; 
+}
+
+/* Khi hover, hiển thị và đưa về vị trí ban đầu */
+.dropdown:hover .element-store,
+.dropdown:hover .element-categories {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.element-categories {
+    /* ... các thuộc tính khác ... */
+   position: absolute;
+    min-width: 450px; /* Tăng thêm để có đủ không gian cho 2 cột */
+    top: 100%; /* Đảm bảo nó nằm ngay dưới mục menu */
+    left: 0;   /* Căn chỉnh sang trái mục menu */
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px); 
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    
+    /* XÓA: display: grid; */
+    /* XÓA: grid-template-columns: repeat(1, 2fr); */
+    
+    /* THÊM: Multi-column Layout */
+    column-count: 2; /* Chia thành 2 cột */
+    column-gap: 20px; /* Khoảng cách giữa 2 cột */
+    
+    padding: 10px;
+}
+
+/* Hiệu ứng khi di chuột vào mục con */
+.element-store .element-drop:hover, 
+.element-categories .element-drop:hover {
+    /* Màu nền sáng hơn một chút (Xanh tím nhạt mờ) */
+    background-color: rgba(60, 50, 90, 0.5); 
+    
+    /* Đổi màu chữ sang màu highlight */
+    color: #F0DFAF; 
+}
+
+.element-categories .element-drop {
+	padding: 12px 16px;
+	text-decoration: none;
+	text-align: left;
+    
+    /* Sửa Lỗi: Đặt nền trong suốt để thấy hiệu ứng hover/background chung */
+	background-color: transparent; 
+    
+    /* QUAN TRỌNG: Cần thiết cho Multi-column */
+    display: inline-block; /* Hoặc block */
+    width: 100%; /* Chiếm toàn bộ chiều rộng cột */
+    break-inside: avoid; /* Ngăn không bị ngắt giữa hai cột */
+}
+
+.dropdown:hover .element-categories {
+	opacity: 1;
+    visibility: visible;
+	transform: translateY(0);
+}
+/*
+CSS BÊN PHẦN ĐĂNG NHẬP
+*/
+.container-header-bottom {
+	border-bottom: 0.5px solid #4F4F67;
+}
+
+.login-container {
+	display: flex;
+	margin-left: auto;
+	padding: 10px 17px;
+	gap: 8px;
+	align-items: center;
+}
+.search{
+	background: rgb(40, 35, 70);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 10px 16px;
+    width: 280px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    transition: width 0.4s ease-in-out;
+}
+.search:focus-within {
+    /* Độ rộng mới của khung tìm kiếm (lớn hơn) */
+    width: 380px; 
+}
+.user-info{
+	margin: auto;
+}
+.login-text {
+	text-decoration: none;
+	color: #E8E8E8;
+}
+
+.register {
+	text-decoration: none;
+	color: #E8E8E8;
+}
