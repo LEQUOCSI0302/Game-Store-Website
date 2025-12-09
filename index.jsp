@@ -6,12 +6,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Steak</title>
-
-
-<link rel="stylesheet" href="styles/Full.css" />
-<link rel="stylesheet" href="styles/Poster.css" />
-<link rel="stylesheet" href="styles/DiscountStyle.css" />
-<link rel="stylesheet" href="styles/Footer.css" />
 </head>
 <body>
 <nav></nav>
