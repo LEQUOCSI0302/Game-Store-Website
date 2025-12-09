@@ -1,55 +1,103 @@
-
-@charset "UTF-8";
-/* MÀU SẮC DỰA TRÊN STEAM */
-
-/* CONTAINER CHÍNH: <footer> */
 footer {
-    background-color: #0F1026;
-    color: #E8E8E8;
-    font-family: Arial, sans-serif;
-    font-size: 13px;
-    line-height: 1.6;
-    padding: 0; /* Xóa padding mặc định */
-}
-
-/* CONTAINER BÊN TRONG: <div> đầu tiên (bọc toàn bộ nội dung) */
-footer > div:first-child {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 30px 20px; /* Padding chính cho nội dung footer */
-}
-
-/* ĐỊNH DẠNG DÒNG LIÊN KẾT CHÍNH (Chính sách, Pháp lý,...) */
-.footer-links-row {
-    margin-bottom: 20px;
-}
-.footer-links-row a {
-    color: var(--text-color);
-    text-decoration: none;
-    opacity: 0.8;
-}
-.footer-links-row a:hover {
-    color: #F0DFAF;
-    opacity: 1;
-}
-
-/* ĐỊNH DẠNG ĐƯỜNG KẺ NGANG <hr> */
-hr {
-    border: none;
-    border-top: 1px solid var(--border-color); /* Áp dụng màu xám đậm cho đường phân cách */
-    margin: 15px 0;
+	 position: fixed;
+    bottom: 0;
+    left: 0;
     width: 100%;
+    background-color: #0F1026;
+    z-index: 100;
 }
 
-/* ĐỊNH DẠNG THÔNG TIN ĐỊA CHỈ VÀ ĐIỆN THOẠI */
-.footer-address-info > div {
-    /* Đảm bảo chúng hiển thị trên các dòng riêng biệt nếu cần, hoặc dùng flex để xếp ngang */
-    display: block; 
+.service, .information {
+	display: flex;
+	position: relative;
+	align-items: center;
+	max-width: 1400px;
+	margin: 0 auto;
+	/* === BỔ SUNG QUAN TRỌNG: THÊM PADDING NGANG === */
+	/* Padding này tạo lề (gutter) khi màn hình nhỏ hơn 1400px */
+	padding: 0 20px;
 }
 
-/* XỬ LÝ KHOẢNG CÁCH CHO CÁC PHẦN TỬ CHIA CỘT */
-.footer-columns {
+.service {
+	display: flex;
+	position: relative;
+	align-items: center;
+	border-bottom: 0.5px solid #4F4F67;
+}
+
+.list-service {
+	list-style-type: none;
+}
+
+.element-service {
+	margin: 10px;
+	float: left;
+}
+
+.a-el {
+	font-weight: bold;
+	text-decoration: none;
+	color: white;
+}
+
+.element-service a {
+	font-weight: 800;
+}
+
+.a-el:hover {
+	color: #F0DFAF;
+}
+/* 
+Phần giữa của Footer
+*/
+.information {
+	 padding: 20px; 
+	display: flex;
+	position: relative;
+	justify-content: space-between;
+	align-items: flex-start;
+	max-width: 1400px;
+	margin: 0 auto;
+}
+
+.infor , .thank-you{
+	padding: 10px;
+}
+
+.list-infor {
+	list-style-type: none;
+}
+.list-infor li, .list-thanks li{
+	color: #cfcfcf;
+}
+.a-phone, .a-email{
+	color: blue;
+}
+.a-phone:hover, .a-email:hover{
+	color:  #F0DFAF;
+	text-decoration: underline;
+}
+.list-thanks {
+	list-style-type: none;
+}
+.list-service, .list-infor, .list-thanks {
+    list-style-type: none;
+    padding: 0; /* Xóa khoảng thụt vào mặc định của UL */
+    margin: 0;  /* Xóa margin mặc định nếu có */
+}
+/*
+Phần dưới cùng của footer
+*/
+.copyright-container {
+    /* Đồng bộ các quy tắc với .service và .information */
+    max-width: 1400px;
+	margin: 0 auto; 
+    padding: 10px 20px; /* Đồng bộ lề ngang 20px */
+    
+    /* Dùng Flexbox để căn chỉnh 2 dòng spans */
     display: flex;
-    gap: 30px;
-    padding-top: 10px;
+    justify-content: space-between; /* Tách Copyright và Cảm ơn GV ra hai bên */
+    border-top: 0.5px solid #4F4F67;
+    color: white; 
+    font-size: 14px;
 }
