@@ -1,0 +1,16 @@
+@charset "UTF-8";
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Thiết lập chiều cao tối thiểu bằng 100% khung nhìn */
+}
+
+body {
+    display: flex; /* Kích hoạt Flexbox */
+    flex-direction: column; /* Sắp xếp các phần tử con theo chiều dọc (Header, Main, Footer) */
+}
+
+/* TÊN THẺ HOẶC CLASS BAO BỌC NỘI DUNG CHÍNH */
+main { 
+    flex-grow: 1; /* Lệnh này buộc phần nội dung chính giãn nở để đẩy Footer xuống */
+}

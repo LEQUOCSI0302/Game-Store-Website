@@ -1,0 +1,172 @@
+@charset "UTF-8";
+#login{
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('../home/background-sekiro-for-login.png') no-repeat center center fixed; /* Thay bằng đường dẫn hình ảnh của bạn */
+    background-size: cover;
+    display: flex;
+    justify-content: center; /* Căn giữa ngang */
+    align-items: center; /* Căn giữa dọc */
+    height: 100vh;
+    padding: 20px;
+    gap: 50px; /* Khoảng cách giữa hai khối */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.infor-login{
+width: 400px;
+    padding: 20px;
+    text-align: right;
+	
+}
+.infor-login span {
+    font-size: 36px;
+    font-weight: bold;
+    color: #F0DFAF; /* Màu highlight */
+    display: block;
+    margin-bottom: 5px;
+}
+.infor-login ul {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
+    border-top: 1px solid #4F4F67;
+    padding-top: 20px;
+}
+
+.infor-login li {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #b0b0b0;
+}
+.infor-login li:first-child {
+    font-weight: bold;
+    color: #E8E8E8;
+    margin-bottom: 15px;
+}
+.login-form {
+    /* Tạo hiệu ứng tối mờ như trong hình */
+    background-color: rgba(10, 10, 15, 0.9); 
+    border-radius: 20px;
+    padding: 40px;
+    width: 450px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    opacity: 0.7;
+    z-index: 10;
+}
+
+.login-form > span { /* Tiêu đề "Đăng Nhập" */
+    font-size: 28px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #333;
+}
+
+/* Lỗi JSP (nếu có) */
+#login > p {
+    background-color: rgba(255, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+
+/* Form Group (Label + Input) */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: #b0b0b0;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background-color: #1a1a2e;
+    color: #fff;
+    outline: none;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #F0DFAF;
+}
+
+/* Nút Đăng nhập */
+.login-button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    background-color: #0056b3; 
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #004494;
+}
+
+/* Đăng nhập mạng xã hội */
+.social-login-options {
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #333;
+    text-align: center;
+}
+
+.social-login-options span {
+    display: block;
+    color: #b0b0b0;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.social-login-options ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+/* Style cho Icon/Link mạng xã hội (Hiện tại là Text) */
+.social-login-options li {
+    background-color: #2a2a44;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #F0DFAF;
+    transition: background-color 0.3s;
+}
+.social-login-options li:hover {
+    background-color: #3b3b5c;
+}
+
+/* Link dưới cùng */
+#account_creation, #return_index{
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #F0DFAF; /* Màu highlight */
+    text-decoration: none;
+    font-size: 14px;
+}
+
+#return_index:hover {
+    text-decoration: underline;
+}

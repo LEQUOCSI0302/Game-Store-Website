@@ -1,0 +1,109 @@
+footer {
+	width: 100%;
+	background-color: #0F1026;
+}
+
+.service, .information {
+	display: flex;
+	position: relative;
+	align-items: center;
+	max-width: 1400px;
+	margin: 0 auto;
+	/* === BỔ SUNG QUAN TRỌNG: THÊM PADDING NGANG === */
+	/* Padding này tạo lề (gutter) khi màn hình nhỏ hơn 1400px */
+	padding: 0 20px;
+}
+
+.service {
+	display: flex;
+	position: relative;
+	align-items: center;
+	border-bottom: 0.5px solid #4F4F67;
+}
+
+.list-service {
+	display: flex; /* Biến list-service thành flex container */
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.element-service {
+	margin: 10px;
+	float: left;
+}
+
+.a-el {
+	font-weight: bold;
+	text-decoration: none;
+	color: white;
+}
+
+.element-service a {
+	font-weight: 800;
+}
+
+.a-el:hover {
+	color: #F0DFAF;
+}
+/* 
+Phần giữa của Footer
+*/
+.information {
+	padding: 10px 20px;
+	display: flex;
+	position: relative;
+	justify-content: space-between;
+	align-items: flex-start;
+	max-width: 1400px;
+	margin: 0 auto;
+}
+
+.infor, .thank-you {
+	padding: 0;
+}
+
+.list-infor {
+	list-style-type: none;
+}
+
+.list-infor li, .list-thanks li {
+	color: #cfcfcf;
+	margin-bottom: 2px;
+	line-height: 1.4;
+}
+
+.a-phone, .a-email {
+	color: blue;
+}
+
+.a-phone:hover, .a-email:hover {
+	color: #F0DFAF;
+	text-decoration: underline;
+}
+
+.list-thanks {
+	list-style-type: none;
+}
+
+.list-service, .list-infor, .list-thanks {
+	list-style-type: none;
+	padding: 0; /* Xóa khoảng thụt vào mặc định của UL */
+	margin: 0; /* Xóa margin mặc định nếu có */
+}
+/*
+Phần dưới cùng của footer
+*/
+.copyright-container {
+	/* Đồng bộ các quy tắc với .service và .information */
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 8px 20px; /* Đồng bộ lề ngang 20px */
+	/* Dùng Flexbox để căn chỉnh 2 dòng spans */
+	display: flex;
+	justify-content: space-between;
+	/* Tách Copyright và Cảm ơn GV ra hai bên */
+	border-top: 0.5px solid #4F4F67;
+	color: white;
+	font-size: 14px;
+}

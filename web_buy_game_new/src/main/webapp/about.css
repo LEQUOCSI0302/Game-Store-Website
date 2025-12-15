@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    background-color: rgb(26, 41, 56);
+}
+
+/* tao mau*/
+h1 {
+    font-size: 45px;
+    color: rgb(255, 255, 255);
+}
+
+h2 {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+h3 {
+    font-size: 16px;
+    color: #0dee6e;
+}
+
+h4 {
+    font-size: 20px;
+    color: #2008be;
+}
+
+h5 {
+    font-size: 12px;
+    color: #ffffff;
+}
+
+h6 {
+    font-weight: 700;
+    font-size: 12px;
+}
+
+p {
+    font-size: 12px;
+    color: #465b52;
+}
+
+#nen_mo_dau {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 100px 0px;
+    border: #222;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+#list_gioithieu {
+    max-width: 500px;
+}
+
+#video_gioithieu {
+    background-color: rgb(36, 56, 75);
+    padding: 30px;
+    border: #222;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    /* Đổ bóng */
+}
+
+
+#bieutuong {
+    display: flex;
+    gap: 20px;
+    padding: 0px 20px;
+    border: #222;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+#bieutuong h1 {
+    font-size: 50px;
+
+}
+
+#adv {
+    display: flex;
+    gap: 200px;
+    padding: 20px 20px;
+}
+
+#caidat a {
+    padding: 10px 20px;
+    background: #ffffff;
+    display: inline-block;
+    color: #8a2be2;
+    text-decoration: underline;
+    font-size: 16px;
+}
+
+#h_5 {
+    padding: 10px 0px;
+}
+
+#quang_ba {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    width: 100%;
+    min-height: 80vh;
+    background-color: rgb(36, 56, 75);
+    border: #222;
+    box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.3);
+}
+
+
+
+#quang_ba .quang_ba_noidung {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+#quang_ba h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+#quang_ba h2 {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hinh_vidu {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    background-color: rgb(36, 56, 75);
+}
+
+.hinh_vidu img {
+    height: 75px;
+}
+
+.hinh_vidu img:nth-child(1) {
+    transform: translateX(30px);
+}
+
+.hinh_vidu img:nth-child(3) {
+    transform: translateX(-50px);
+}
+
+#noi_dung_1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin: 0 auto;
+    max-width: 1000px;
+    max-height: 500px;
+    gap: 30px;
+    padding: 50px;
+}
+
+#noi_dung_1 h2 {
+    padding: 20px;
+}
+
+#noi_dung_gioi_thieu {
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#noi_dung_tieude h1 {
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+#noi_dung_tieude h2 {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#noi_dung_game {
+    padding: 10px;
+    display: flex;
+    gap: 30px;
+}
+
+/* Đặt màu nền cho body là màu đen hoàn toàn */
+#noi_dung_tong,
+#noi_dung_gioi_thieu,
+#noi_dung_tieude,
+#noi_dung_game {
+    background: #212020;
+    /* Màu đen */
+    /* Loại bỏ width: fit-content; để khối có thể trải rộng nếu cần */
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+}
+
+#noi_dung_gioi_thieu {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Các tiêu đề chính */
+#noi_dung_tieude h1,
+#noi_dung_tieude h2 {
+    background: #212020;
+    color: #ffffff;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Khối chứa 3 tính năng */
+#noi_dung_game {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* KHỐI TÍNH NĂNG CON */
+.noi_dung_2a {
+    /* Đảm bảo khối con có màu nền trắng mờ như trong ảnh */
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    max-width: 300px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    /* Màu nền mờ */
+    /* Thêm transition để hiệu ứng hover mượt mà hơn */
+    transition: background-color 0.3s ease;
+}
+
+/* Hiệu ứng HOVER cho khối con */
+.noi_dung_2a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Hơi sáng lên khi hover */
+    cursor: pointer;
+}
+
+/* ẨN MÀU NỀN CỦA CHỮ KHI KHÔNG HOVER */
+.noi_dung_2a h2,
+.noi_dung_2a h3 {
+    /* Màu nền ban đầu trùng với màu nền của khối .noi_dung_2a */
+    background-color: transparent;
+    padding: 5px 10px;
+    width: fit-content;
+    margin: 10px auto;
+    border-radius: 4px;
+    /* Thêm transition cho màu nền */
+    transition: background-color 0.3s ease;
+    /* Đảm bảo chữ vẫn hiển thị */
+    color: #ffffff;
+}
+
+.noi_dung_2a:hover h2,
+.noi_dung_2a:hover h3 {
+    background-color: #1a1c2d;
+}
+
+/* Điều chỉnh lại ảnh bo tròn */
+#noi_dung_game img {
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 20px auto;
+    padding: 5px;
+    background-color: aquamarine;
+    object-fit: cover;
+}
