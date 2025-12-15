@@ -1,10 +1,6 @@
 footer {
-	 position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #0F1026;
-    z-index: 100;
+	width: 100%;
+	background-color: #0F1026;
 }
 
 .service, .information {
@@ -26,7 +22,10 @@ footer {
 }
 
 .list-service {
+	display: flex; /* Biến list-service thành flex container */
 	list-style-type: none;
+	padding: 0;
+	margin: 0;
 }
 
 .element-service {
@@ -51,7 +50,7 @@ footer {
 Phần giữa của Footer
 */
 .information {
-	 padding: 20px; 
+	padding: 10px 20px;
 	display: flex;
 	position: relative;
 	justify-content: space-between;
@@ -60,44 +59,51 @@ Phần giữa của Footer
 	margin: 0 auto;
 }
 
-.infor , .thank-you{
-	padding: 10px;
+.infor, .thank-you {
+	padding: 0;
 }
 
 .list-infor {
 	list-style-type: none;
 }
-.list-infor li, .list-thanks li{
+
+.list-infor li, .list-thanks li {
 	color: #cfcfcf;
+	margin-bottom: 2px;
+	line-height: 1.4;
 }
-.a-phone, .a-email{
+
+.a-phone, .a-email {
 	color: blue;
 }
-.a-phone:hover, .a-email:hover{
-	color:  #F0DFAF;
+
+.a-phone:hover, .a-email:hover {
+	color: #F0DFAF;
 	text-decoration: underline;
 }
+
 .list-thanks {
 	list-style-type: none;
 }
+
 .list-service, .list-infor, .list-thanks {
-    list-style-type: none;
-    padding: 0; /* Xóa khoảng thụt vào mặc định của UL */
-    margin: 0;  /* Xóa margin mặc định nếu có */
+	list-style-type: none;
+	padding: 0; /* Xóa khoảng thụt vào mặc định của UL */
+	margin: 0; /* Xóa margin mặc định nếu có */
 }
 /*
 Phần dưới cùng của footer
 */
 .copyright-container {
-    /* Đồng bộ các quy tắc với .service và .information */
-    max-width: 1400px;
-	margin: 0 auto; 
-    padding: 10px 20px; /* Đồng bộ lề ngang 20px */
-    
-    /* Dùng Flexbox để căn chỉnh 2 dòng spans */
-    display: flex;
-    justify-content: space-between; /* Tách Copyright và Cảm ơn GV ra hai bên */
-    border-top: 0.5px solid #4F4F67;
-    color: white; 
-    font-size: 14px;
+	/* Đồng bộ các quy tắc với .service và .information */
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 8px 20px; /* Đồng bộ lề ngang 20px */
+	/* Dùng Flexbox để căn chỉnh 2 dòng spans */
+	display: flex;
+	justify-content: space-between;
+	/* Tách Copyright và Cảm ơn GV ra hai bên */
+	border-top: 0.5px solid #4F4F67;
+	color: white;
+	font-size: 14px;
 }

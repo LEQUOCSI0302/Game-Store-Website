@@ -8,6 +8,9 @@ header {
 	display: block;
 	width: 100%;
 	background-color: #0F1026;
+	position: sticky; 
+    top: 0;
+    z-index: 1000;
 }
 
 body {
@@ -20,7 +23,6 @@ body {
 */
 .container-header-top {
 	display: flex;
-	position: relative;
 	padding: 5px;
 	align-items: center;
 	max-width: 1400px;
@@ -83,7 +85,7 @@ span:hover {
 */
 .container-header-bottom {
 	display: flex;
-	position: relative;
+	background-color: #0F1026;
 	padding: 5px;
 	max-width: 1400px;
 	margin: 0 auto;
@@ -111,9 +113,6 @@ span:hover {
 	overflow: hidden;
 }
 
-.dropdown {
-	float: left;
-}
 
 .element-of-list {
 	display: inline-block;
