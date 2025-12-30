@@ -1,16 +1,302 @@
 @charset "UTF-8";
+
 html, body {
     margin: 0;
     padding: 0;
-    min-height: 100vh; /* Thiết lập chiều cao tối thiểu bằng 100% khung nhìn */
+    min-height: 100vh;
+    background-color: #1b2838; /* Màu tối kiểu Steam */
+    font-family: Arial, sans-serif;
 }
 
 body {
-    display: flex; /* Kích hoạt Flexbox */
-    flex-direction: column; /* Sắp xếp các phần tử con theo chiều dọc (Header, Main, Footer) */
+    display: flex;
+    flex-direction: column;
 }
 
-/* TÊN THẺ HOẶC CLASS BAO BỌC NỘI DUNG CHÍNH */
 main { 
-    flex-grow: 1; /* Lệnh này buộc phần nội dung chính giãn nở để đẩy Footer xuống */
+    flex-grow: 1;
 }
+.category-slider-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 15px 40px;
+    background: #161928; /* Màu tối như trong ảnh */
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.category-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #c6d4df;
+    transition: 0.3s;
+}
+
+.category-item img {
+    width: 40px; /* Chỉnh kích thước icon */
+    height: 40px;
+    margin-bottom: 10px;
+    object-fit: contain;
+}
+
+.category-item span {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.category-item:hover {
+    color: #66c0f4;
+    transform: translateY(-5px);
+}
+/* --- KHUNG BAO NGOÀI (Cái kệ lớn) --- */
+.brand-filter-container {
+    max-width: 1400px;
+    margin: 30px auto; /* Tăng khoảng cách trên dưới một chút */
+    padding: 30px;
+    
+    /* Nền tối, sử dụng gradient nhẹ để tạo chiều sâu */
+    background: linear-gradient(to bottom, #4f4f67, #151f2e);
+    
+    /* Viền mỏng màu xanh sáng nhẹ để tách biệt với nền web */
+    border: 1px solid rgba(102, 192, 244, 0.15);
+    
+    /* Bo góc lớn và thêm bóng đổ nhẹ */
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Danh sách sắp xếp các ô vuông (Giữ nguyên) */
+.brand-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Căn giữa sẽ đẹp hơn là chia đều khi ít mục */
+    align-items: center;
+    gap: 20px; /* Tăng khoảng cách giữa các ô */
+}
+
+/* --- CÁC Ô THẺ THỂ LOẠI --- */
+.cate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    
+    /* Kích thước ô */
+    min-width: 130px; /* Rộng hơn một chút */
+    height: 85px;
+    padding: 15px;
+
+    /* Màu chữ và font */
+    color: #dcdedf; /* Màu chữ trắng xám sáng hơn */
+    font-size: 12px;
+    font-weight: 700; /* Chữ đậm hơn */
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    /* --- MÀU SẮC & HIỆU ỨNG CỦA Ô --- */
+    /* Nền trong suốt màu xanh đen, tạo cảm giác "kính" */
+    background: rgba(30, 45, 65, 0.5);
+    
+    /* Viền màu xanh sáng nhưng mờ */
+    border: 1px solid rgba(100, 180, 255, 0.2);
+    
+    /* Bo góc */
+    border-radius: 15px;
+    
+    /* Hiệu ứng chuyển đổi mượt mà */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    
+    /* Bóng đổ nhẹ bên trong để tạo độ nổi */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* --- HIỆU ỨNG KHI DI CHUỘT (HOVER) --- */
+.cate:hover {
+    /* Đổi màu chữ sang trắng tinh */
+    color: #ffffff;
+    
+    /* Nền chuyển sang màu xanh cyan sáng đặc trưng */
+    background: #66c0f4;
+    background: linear-gradient(135deg, #66c0f4, #4fa3d6); /* Gradient nhẹ cho đẹp */
+    
+    /* Viền sáng rõ */
+    border-color: #87d0ff;
+    
+    /* Nhích lên và tạo bóng đổ phát sáng */
+    transform: translateY(-7px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(102, 192, 244, 0.4), 
+                0 0 15px rgba(102, 192, 244, 0.2) inset; /* Phát sáng cả trong lẫn ngoài */
+}
+
+/* Hiệu ứng khi nhấn */
+.cate:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.1s;
+}
+/* --- TỔNG THỂ PHẦN VIDEO --- */
+#video-goty {
+    max-width: 1400px; /* Chiều rộng tối đa 1400px theo ý bạn */
+    margin: 60px auto; /* Căn giữa toàn bộ section */
+    padding: 40px;
+    display: flex;     /* Dàn hàng ngang video và chữ */
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;         /* Khoảng cách giữa video và tiêu đề */
+    
+    /* Hiệu ứng nền mờ ảo phía sau */
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- KHUNG CHỨA VIDEO --- */
+.mathk:first-child {
+    flex: 2; /* Chiếm nhiều không gian hơn chữ */
+    position: relative;
+    border-radius: 20px;
+    padding: 10px; /* Tạo khoảng hở giữa viền và video */
+    
+    /* Tạo khung viền phát sáng (Glow) */
+    background: linear-gradient(135deg, #66c0f4, #4fa3d6);
+    box-shadow: 0 0 40px rgba(102, 192, 244, 0.2);
+}
+
+#video-goty video {
+    width: 100% !important; /* Để video tự co giãn theo khung */
+    height: auto !important;
+    border-radius: 12px;
+    display: block;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* --- PHẦN CHỮ (TITLE) --- */
+.mathk:last-child {
+    flex: 1;
+    text-align: left;
+}
+
+#video-goty h1 {
+    font-size: 4rem;      /* Chữ rất to để gây ấn tượng */
+    font-weight: 900;
+    line-height: 1.1;
+    margin: 0;
+    
+    /* Màu vàng Gold cho Game of the Year */
+    color: #ffb800; 
+    text-transform: uppercase;
+    
+    /* Hiệu ứng đổ bóng chữ để nổi bật trên nền tối */
+    text-shadow: 3px 3px 0px #3a424d, 
+                 0 0 20px rgba(255, 184, 0, 0.4);
+    
+    letter-spacing: -2px;
+}
+/* Bộ lọc tab */
+.product-filter-tabs {
+    max-width: 1400px;
+    margin: 20px auto;
+    display: flex;
+    gap: 15px;
+    padding: 0 15px;
+}
+
+.tab {
+    text-decoration: none;
+    color: #c6d4df;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.tab.active, .tab:hover {
+    background: #66c0f4;
+    color: white;
+}
+
+/* Khu vực danh sách sản phẩm */
+.product-section {
+    max-width: 1400px;
+    margin: 0 auto 50px;
+    padding: 0 15px;
+}
+
+.product-grid {
+    display: grid;
+    /* Chia làm 4 cột đều nhau */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+}
+
+/* Thẻ sản phẩm (Card) */
+.product-card {
+    background: rgba(30, 45, 65, 0.4);
+    border-radius: 12px;
+    display: flex; /* Dàn hàng ngang: Ảnh trái - Chữ phải */
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.product-card:hover {
+    background: rgba(49, 61, 78, 0.8);
+    border-color: #66c0f4;
+    transform: translateY(-5px);
+}
+
+/* Ảnh bên trái */
+.product-img {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+}
+
+.product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Thông tin bên phải */
+.product-info {
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-title {
+    color: #ffffff;
+    font-size: 14px;
+    margin: 0 0 5px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Giới hạn 2 dòng chữ */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.product-price {
+    color: #ffb800; /* Màu vàng nổi bật */
+    font-weight: bold;
+    font-size: 13px;
+    margin: 5px 0;
+}
+
+.product-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #8fa1b0;
+}
+
+
